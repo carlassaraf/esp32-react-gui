@@ -6,27 +6,27 @@ interface LedIconProps {
 }
 
 const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
-  const [color, setColor] = useState("black");
+  const [color, setColor] = useState(fill);
   const [ledState, setLedState] = useState(false);
-  const [background, setBackground] = useState(fill);
+  const [background, setBackground] = useState("#222");
 
   const handleHoverIn = () => {
     setColor("#555555");
   }
 
   const handleHoverOut = () => {
-    ledState? setColor(fill) : setColor("black");
+    ledState? setColor("black") : setColor(fill);
   }
 
   const handleClick = () => {
     if(ledState === true) { 
-      setColor("black");
-      setBackground(fill);
+      setColor(fill);
+      setBackground("#222");
       setLedState(false);
     }
     else { 
-      setColor(fill);
-      setBackground("#222");
+      setColor("#222");
+      setBackground(fill);
       setLedState(true);
     }
   }
