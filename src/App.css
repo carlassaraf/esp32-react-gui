@@ -11,11 +11,3 @@ body {
   padding: 2rem;
   text-align: center;
 }
-
-.ui {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 2rem;
-}
