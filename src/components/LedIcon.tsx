@@ -8,6 +8,7 @@ interface LedIconProps {
 const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
   const [color, setColor] = useState("black");
   const [ledState, setLedState] = useState(false);
+  const [background, setBackground] = useState(fill);
 
   const handleHoverIn = () => {
     setColor("#555555");
@@ -20,10 +21,12 @@ const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
   const handleClick = () => {
     if(ledState === true) { 
       setColor("black");
+      setBackground(fill);
       setLedState(false);
     }
     else { 
       setColor(fill);
+      setBackground("#222");
       setLedState(true);
     }
   }
@@ -37,6 +40,7 @@ const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
       onMouseEnter={handleHoverIn}
       onMouseLeave={handleHoverOut}
       version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 298" enableBackground="new 0 0 298 298">
+      <rect width="100%" height="100%" fill={background}/>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
       <g id="SVGRepo_iconCarrier"> 
