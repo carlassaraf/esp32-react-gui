@@ -66,3 +66,33 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Custom app styles */
+
+.hcontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.panel {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.panel h2 {
+  position: absolute;
+  text-align: left;
+  top: -1rem;
+  left: -6rem;
+  transform: translateX(50%);
+  margin: 0;
+  padding: 0 0.5rem;
+  background-color: #222222;
+}
+
+.panel .hcontainer {
+  padding-top: 1rem;
+}
