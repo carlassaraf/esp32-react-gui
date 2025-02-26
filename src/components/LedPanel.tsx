@@ -11,15 +11,14 @@ import "react-color-palette/css";
 interface LedPanelProps {
   colors: Array<string>;  // String array of colors
   size: string; // Size in any unit
-  sliders: Array<string>  // String array of colors
 }
 
-const LedPanel: React.FC<LedPanelProps> = ({colors, size, sliders}) => {
+const LedPanel: React.FC<LedPanelProps> = ({colors, size}) => {
 
   const [color, setColor] = useColor("#561ecb");
 
   return (
-    <div className="panel ledpanel">
+    <div className="panel ledpanel" id="led-panel">
       <h2>LED Control Panel</h2>
       <div className="vcontainer">
         <h3>Individual LEDs</h3>
