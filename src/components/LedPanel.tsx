@@ -1,10 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { ToggleButton } from '@mui/material';
 import LedIcon from './LedIcon';
-import LedSlider from './LedSlider';
 
 import "../index.css"
 import "./LedPanel.css"
+
+import { ColorPicker, useColor } from "react-color-palette";
+import "react-color-palette/css";
 
 interface LedPanelProps {
   colors: Array<string>;  // String array of colors
@@ -14,9 +16,13 @@ interface LedPanelProps {
 
 const LedPanel: React.FC<LedPanelProps> = ({colors, size, sliders}) => {
 
+  const [color, setColor] = useColor("#561ecb");
+
   return (
     <div className="panel ledpanel">
-        <h2>LED Control Panel</h2>
+      <h2>LED Control Panel</h2>
+      <div className="vcontainer">
+        <h3>Individual LEDs</h3>
         <div className="hcontainer">
         {/* A button for every color */}
         {
@@ -28,15 +34,11 @@ const LedPanel: React.FC<LedPanelProps> = ({colors, size, sliders}) => {
             );
           })
         }
+        </div>
       </div>
       <div className="vcontainer">
-      {
-        sliders.map(color => {
-          return (
-            <LedSlider ledColor={color}></LedSlider>
-          )
-        })
-      }
+        <h3>RGB Color Picker</h3>
+        <ColorPicker color={color} onChange={setColor}/>
       </div>
     </div>
   );
