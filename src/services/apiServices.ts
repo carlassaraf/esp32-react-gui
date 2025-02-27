@@ -10,4 +10,11 @@ const setLedState = async (led: string, value: boolean) => {
   return data;
 }
 
-export default { setLedState };
+const setBuzzerState = async (value: boolean) => {
+
+  const response = await fetch(`${serverIP}/buzzer/${value? 1 : 0}`);
+  const data = await response.json();
+  return data;
+}
+
+export default { setLedState, setBuzzerState };
