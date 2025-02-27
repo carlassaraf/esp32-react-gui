@@ -1,0 +1,23 @@
+#lux-panel h2 {
+  left: -4rem;
+}
+
+#lux-panel .MuiGauge-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+#lux-panel .MuiGauge-root svg {
+  max-width: 300px;
+}
+
+#lux-panel .css-p1sr87-MuiGauge-referenceArc {
+  fill: #444;
+}
+
+#lux-panel tspan {
+  fill: white;
+}
