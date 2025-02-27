@@ -7,6 +7,7 @@ import "./LedPanel.css"
 
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
+import apiServices from '../services/apiServices';
 
 interface LedPanelProps {
   colors: Array<string>;  // String array of colors
@@ -16,6 +17,11 @@ interface LedPanelProps {
 const LedPanel: React.FC<LedPanelProps> = ({colors, size}) => {
 
   const [color, setColor] = useColor("#561ecb");
+
+  const handleChange = async (newColor: any) => {
+    setColor(newColor);
+    const data = await apiServices.setRGB(parseInt(newColor.rgb.r), parseInt(newColor.rgb.g), parseInt(newColor.rgb.b));
+  }
 
   return (
     <div className="panel ledpanel" id="led-panel">
@@ -37,7 +43,7 @@ const LedPanel: React.FC<LedPanelProps> = ({colors, size}) => {
       </div>
       <div className="vcontainer">
         <h3>RGB Color Picker</h3>
-        <ColorPicker color={color} onChange={setColor}/>
+        <ColorPicker color={color} onChange={handleChange}/>
       </div>
     </div>
   );
