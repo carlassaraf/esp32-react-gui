@@ -34,7 +34,7 @@ const LedPanel: React.FC<LedPanelProps> = ({colors, size, initialStates, rgbInit
         {
           colors.map((color, i) => {
             return (
-              <ToggleButton value={color} sx={{padding: "0.1rem", border: "1px solid white"}}>
+              <ToggleButton key={`led-${color}`} value={color} sx={{padding: "0.1rem", border: "1px solid white"}}>
                 <LedIcon fill={color} size={size} initialState={initialStates[i]}></LedIcon>
               </ToggleButton>
             );

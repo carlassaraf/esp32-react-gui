@@ -13,7 +13,7 @@ const GPIOButtonPanel: React.FC<GPIOButtonPanelProps> = ({names, pins}) => {
     <h2>Buttons</h2>
     {
       names.map((name, i) => {
-        return <GPIOButton name={name} pin={pins[i]}></GPIOButton>
+        return <GPIOButton name={name} pin={pins[i]} key={`btn-${name}`}></GPIOButton>
       })
     }
   </div>
