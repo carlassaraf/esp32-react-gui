@@ -13,6 +13,7 @@ import { CircularProgress } from '@mui/material';
 
 const App: React.FC = () => {
   const [ledStates, setLedStates] = useState<Array<boolean>>([false, false, false]);
+  const [rgbStates, setRgbStates] = useState("");
   const [loading, setLoading] = useState<boolean>(true);
 
   // Tries to fetch data on component load
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         const data = await apiServices.getAll();
         console.log(data);
         setLedStates(data.leds);
+        setRgbStates(data.rgb);
       }
       catch(error) {
         console.error("Failed to fetch");
@@ -51,6 +53,7 @@ const App: React.FC = () => {
         colors={["red", "yellow", "green"]} 
         size="50px"
         initialStates={ledStates}
+        rgbInitial={rgbStates}
       ></LedPanel>
       <BuzzerPanel/>
       <TemperaturePanel/>

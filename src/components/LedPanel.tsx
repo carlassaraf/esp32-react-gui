@@ -13,11 +13,12 @@ interface LedPanelProps {
   colors: Array<string>;  // String array of colors
   size: string; // Size in any unit
   initialStates: Array<boolean>;
+  rgbInitial: any;
 }
 
-const LedPanel: React.FC<LedPanelProps> = ({colors, size, initialStates}) => {
+const LedPanel: React.FC<LedPanelProps> = ({colors, size, initialStates, rgbInitial}) => {
 
-  const [color, setColor] = useColor("#561ecb");
+  const [color, setColor] = useColor(`rgb(${rgbInitial.r}, ${rgbInitial.g}, ${rgbInitial.b}, 1)`);
 
   const handleChange = async (newColor: any) => {
     setColor(newColor);
