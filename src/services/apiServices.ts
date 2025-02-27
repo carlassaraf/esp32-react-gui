@@ -24,4 +24,10 @@ const setRGB = async (red: number, green: number, blue: number) => {
   return data
 }
 
-export default { setLedState, setBuzzerState, setRGB };
+const getAll = async () => {
+  const response = await fetch(serverIP);
+  const data = await response.json();
+  return data;
+}
+
+export default { setLedState, setBuzzerState, setRGB, getAll };
