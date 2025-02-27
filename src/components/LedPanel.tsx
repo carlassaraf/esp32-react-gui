@@ -12,9 +12,10 @@ import apiServices from '../services/apiServices';
 interface LedPanelProps {
   colors: Array<string>;  // String array of colors
   size: string; // Size in any unit
+  initialStates: Array<boolean>;
 }
 
-const LedPanel: React.FC<LedPanelProps> = ({colors, size}) => {
+const LedPanel: React.FC<LedPanelProps> = ({colors, size, initialStates}) => {
 
   const [color, setColor] = useColor("#561ecb");
 
@@ -31,10 +32,10 @@ const LedPanel: React.FC<LedPanelProps> = ({colors, size}) => {
         <div className="hcontainer">
         {/* A button for every color */}
         {
-          colors.map(color => {
+          colors.map((color, i) => {
             return (
               <ToggleButton value={color} sx={{padding: "0.1rem", border: "1px solid white"}}>
-                <LedIcon fill={color} size={size}></LedIcon>
+                <LedIcon fill={color} size={size} initialState={initialStates[i]}></LedIcon>
               </ToggleButton>
             );
           })

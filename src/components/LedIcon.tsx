@@ -4,12 +4,13 @@ import apiServices from "../services/apiServices.ts";
 interface LedIconProps {
   fill: string;
   size: string;
+  initialState: boolean
 }
 
-const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
-  const [color, setColor] = useState(fill);
-  const [state, setState] = useState(false);
-  const [background, setBackground] = useState("#222");
+const LedIcon: React.FC<LedIconProps> = ({fill, size, initialState}) => {
+  const [color, setColor] = useState(initialState? "#222" : fill);
+  const [state, setState] = useState(initialState);
+  const [background, setBackground] = useState(initialState? fill : "#222");
 
   const handleHoverIn = () => {
     setColor("#555555");
