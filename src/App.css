@@ -5,9 +5,46 @@ body {
   align-items: center;
 }
 
+/* Custom grid layout */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  width: 100vh;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app-panels {
+  display: grid;
+  grid-template: 150px 1fr / auto 200px 100px 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+#led-panel {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+#temperature-panel {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+#buzzer-panel {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+
+#button-panel {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+#lux-panel {
+  grid-column: 3 / 5;
+  grid-row: 2 / 3;
 }
