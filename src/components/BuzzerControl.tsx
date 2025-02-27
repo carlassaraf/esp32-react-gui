@@ -4,10 +4,14 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import apiServices from "../services/apiServices";
 
+export interface BuzzerControlProps {
+  initialState: boolean;
+}
+
 // Simple toggle button using volume icons
 
-const BuzzerControl: React.FC = () => {
-  const [buzzState, setBuzzState] = useState(false);
+const BuzzerControl: React.FC<BuzzerControlProps> = ({initialState}) => {
+  const [buzzState, setBuzzState] = useState(initialState);
 
   const handleClick = async () => {
     setBuzzState(!buzzState);
