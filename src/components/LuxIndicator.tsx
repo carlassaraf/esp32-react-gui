@@ -10,7 +10,7 @@ const LuxIndicator: React.FC = () => {
     const interval = setInterval(async () => {
       const data = await apiServices.getLux();
       setLux(Number(data.lux.toFixed(0)));
-    }, 100);
+    }, 250);
     // Clean up to avoid background executions
     return () => clearInterval(interval);
   }, []);
