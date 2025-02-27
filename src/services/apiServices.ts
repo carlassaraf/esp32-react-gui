@@ -42,4 +42,10 @@ const getLux = async () => {
   return data;
 }
 
-export default { setLedState, setBuzzerState, setRGB, getAll, getTemperature, getLux };
+const getButtons = async () => {
+  const response = await fetch(`${serverIP}/buttons`);
+  const data = await response.json();
+  return data;
+}
+
+export default { setLedState, setBuzzerState, setRGB, getAll, getTemperature, getLux, getButtons };
