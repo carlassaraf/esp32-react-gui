@@ -110,3 +110,11 @@ h2, h3 {
 #led-panel h2 {
   left: -5rem;
 }
+
+#temperature-panel h2 {
+  left: -3rem;
+}
+
+.hidden {
+  display: none;
+}
