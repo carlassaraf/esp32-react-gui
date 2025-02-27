@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiServices from "../services/apiServices.ts";
 
 interface LedIconProps {
   fill: string;
@@ -7,7 +8,7 @@ interface LedIconProps {
 
 const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
   const [color, setColor] = useState(fill);
-  const [ledState, setLedState] = useState(false);
+  const [state, setState] = useState(false);
   const [background, setBackground] = useState("#222");
 
   const handleHoverIn = () => {
@@ -15,19 +16,23 @@ const LedIcon: React.FC<LedIconProps> = ({fill, size}) => {
   }
 
   const handleHoverOut = () => {
-    ledState? setColor("black") : setColor(fill);
+    state? setColor("black") : setColor(fill);
   }
 
-  const handleClick = () => {
-    if(ledState === true) { 
+  const handleClick = async () => {
+    if(state === true) { 
       setColor(fill);
       setBackground("#222");
-      setLedState(false);
+      setState(false);
+      const data = await apiServices.setLedState(fill, false);
+      if(data.status !== 200) { console.error("Failed to fetch"); }
     }
     else { 
       setColor("#222");
       setBackground(fill);
-      setLedState(true);
+      setState(true);
+      const data = await apiServices.setLedState(fill, true);
+      if(data.status !== 200) { console.error("Failed to fetch"); }
     }
   }
 
