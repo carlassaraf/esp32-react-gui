@@ -8,12 +8,12 @@ const TemperaturePanel: React.FC = () => {
 
   const hideLabel = () => {
     document.querySelector(".thermometer__percent-current")?.classList.add("hidden");
-    setIsHovered(false);
+    setIsHovered(!isHovered);
   }
 
   const showLabel = () => {
     document.querySelector(".thermometer__percent-current")?.classList.remove("hidden");
-    setIsHovered(true);
+    setIsHovered(!isHovered);
   }
 
   useEffect(() => {
