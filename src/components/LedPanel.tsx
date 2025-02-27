@@ -6,7 +6,6 @@ import "../index.css"
 import "./LedPanel.css"
 
 import { ColorPicker, useColor } from "react-color-palette";
-import "react-color-palette/css";
 import apiServices from '../services/apiServices';
 
 interface LedPanelProps {
@@ -22,7 +21,7 @@ const LedPanel: React.FC<LedPanelProps> = ({colors, size, initialStates, rgbInit
 
   const handleChange = async (newColor: any) => {
     setColor(newColor);
-    const data = await apiServices.setRGB(parseInt(newColor.rgb.r), parseInt(newColor.rgb.g), parseInt(newColor.rgb.b));
+    await apiServices.setRGB(parseInt(newColor.rgb.r), parseInt(newColor.rgb.g), parseInt(newColor.rgb.b));
   }
 
   return (

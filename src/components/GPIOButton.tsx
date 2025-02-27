@@ -9,7 +9,8 @@ interface GPIOButtonProps {
 }
 
 const GPIOButton: React.FC<GPIOButtonProps> = ({name, pin}) => {
-  const [state, changeState] = useState(false);
+  // For later
+  // const [state, changeState] = useState(false);
   const icons: Record<string, React.ElementType> = {
     izq: ArrowCircleLeftIcon,
     enter: ArrowCircleUpIcon,
