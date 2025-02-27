@@ -1,6 +1,8 @@
 #buzzer-panel {
-  justify-content: flex-end;
-  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #buzzer-panel h2 {
