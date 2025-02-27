@@ -7,7 +7,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: fit-content;
+  max-width: 300px;
+  width: auto;
 }
 
 #lux-panel .MuiGauge-root svg {
