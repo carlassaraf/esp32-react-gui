@@ -23,7 +23,6 @@ const App: React.FC = () => {
     const fetchData = async () => {
       try {
         const data = await apiServices.getAll();
-        console.log(data);
         setLedStates(data.leds);
         setRgbStates(data.rgb);
         setBuzzerState(data.buzzer);
@@ -60,7 +59,7 @@ const App: React.FC = () => {
       <BuzzerPanel initialState={buzzerState}/>
       <TemperaturePanel/>
       <GPIOButtonPanel
-        names={["IZQ", "ENTER", "DER"]}
+        names={["LEFT", "ENTER", "RIGHT"]}
         pins={[13, 15, 23]}
       ></GPIOButtonPanel>
       <LuxPanel></LuxPanel>
