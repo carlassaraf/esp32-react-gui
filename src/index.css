@@ -103,16 +103,8 @@ h2, h3 {
   margin: 0;
 }
 
-#buzzer-panel h2 {
-  left: -1rem;
-}
-
 #led-panel h2 {
   left: -5rem;
-}
-
-#temperature-panel h2 {
-  left: -3rem;
 }
 
 .hidden {
