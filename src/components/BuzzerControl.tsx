@@ -14,7 +14,7 @@ const BuzzerControl: React.FC = () => {
 
   return <ToggleButton value={!buzzState} onClick={handleClick}>
     {
-      buzzState? <VolumeUpIcon sx={{fill: "white"}}></VolumeUpIcon> : <VolumeOffIcon sx={{fill: "white"}}></VolumeOffIcon>
+      buzzState? <VolumeUpIcon sx={{fill: "white", fontSize: 40}}></VolumeUpIcon> : <VolumeOffIcon sx={{fill: "white", fontSize: 40}}></VolumeOffIcon>
     }
   </ToggleButton>
 }
